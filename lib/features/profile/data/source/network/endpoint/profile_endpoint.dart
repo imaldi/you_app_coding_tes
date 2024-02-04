@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:you_app_coding_tes/core/use_case/base_use_case.dart';
-import 'package:you_app_coding_tes/features/profile/data/source/model/user_model.dart';
+
+import '../model/user_model.dart';
 
 part 'profile_endpoint.g.dart';
 

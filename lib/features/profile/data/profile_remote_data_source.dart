@@ -1,5 +1,5 @@
-import 'package:you_app_coding_tes/features/profile/data/source/model/user_model.dart';
-import 'package:you_app_coding_tes/features/profile/data/source/network/profile_endpoint.dart';
+import 'package:you_app_coding_tes/features/profile/data/source/network/endpoint/profile_endpoint.dart';
+import 'package:you_app_coding_tes/features/profile/data/source/network/model/user_model.dart';
 
 class ProfileRemoteDataSourceImpl extends ProfileRemoteDataSource {
   final ProfileEndpoint _profileEndpoint;

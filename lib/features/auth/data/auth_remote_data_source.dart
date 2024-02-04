@@ -1,5 +1,5 @@
 import 'package:you_app_coding_tes/core/use_case/base_use_case.dart';
-import 'package:you_app_coding_tes/features/auth/data/source/network/auth_endpoint.dart';
+import 'package:you_app_coding_tes/features/auth/data/source/network/endpoint/auth_endpoint.dart';
 
 class AuthRemoteDataSourceImpl extends AuthRemoteDataSource  {
   final AuthEndpoint _authEndpoint;

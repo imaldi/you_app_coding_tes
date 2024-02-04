@@ -155,14 +155,15 @@ class __$$UserApiModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserApiModelImpl implements _UserApiModel {
+class _$UserApiModelImpl extends _UserApiModel {
   const _$UserApiModelImpl(
       {@JsonKey(name: "name") this.name,
       @JsonKey(name: "birthday") this.birthday,
       @JsonKey(name: "height") this.height,
       @JsonKey(name: "weight") this.weight,
       @JsonKey(name: "interests") final List<String>? interests})
-      : _interests = interests;
+      : _interests = interests,
+        super._();
 
   factory _$UserApiModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserApiModelImplFromJson(json);
@@ -228,7 +229,7 @@ class _$UserApiModelImpl implements _UserApiModel {
   }
 }
 
-abstract class _UserApiModel implements UserApiModel {
+abstract class _UserApiModel extends UserApiModel {
   const factory _UserApiModel(
           {@JsonKey(name: "name") final String? name,
           @JsonKey(name: "birthday") final String? birthday,
@@ -236,6 +237,7 @@ abstract class _UserApiModel implements UserApiModel {
           @JsonKey(name: "weight") final String? weight,
           @JsonKey(name: "interests") final List<String>? interests}) =
       _$UserApiModelImpl;
+  const _UserApiModel._() : super._();
 
   factory _UserApiModel.fromJson(Map<String, dynamic> json) =
       _$UserApiModelImpl.fromJson;

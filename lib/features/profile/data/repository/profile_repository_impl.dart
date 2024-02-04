@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:fpdart/src/either.dart';
 import 'package:you_app_coding_tes/core/failures/app_failures.dart';
 import 'package:you_app_coding_tes/core/network/api_error.dart';
-import 'package:you_app_coding_tes/features/profile/data/source/model/user_model.dart';
 
 import '../../domain/repository/profile_repository.dart';
 import '../profile_remote_data_source.dart';
+import '../source/network/model/user_model.dart';
 
 class ProfileRepositoryImpl extends ProfileRepository {
   final ProfileRemoteDataSource _remoteDataSource;
