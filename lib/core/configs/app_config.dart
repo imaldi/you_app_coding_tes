@@ -1,4 +1,4 @@
 class AppConfig {
-  static const urlYouApp = "";
+  static const urlYouApp = "http://techtest.youapp.ai/";
   static const isProduction = false;
 }

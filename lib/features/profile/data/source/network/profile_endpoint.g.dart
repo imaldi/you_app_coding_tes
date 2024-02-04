@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_endpoint.dart';
+part of 'profile_endpoint.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'auth_endpoint.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _AuthEndpoint implements AuthEndpoint {
-  _AuthEndpoint(
+class _ProfileEndpoint implements ProfileEndpoint {
+  _ProfileEndpoint(
     this._dio, {
     this.baseUrl,
   });
@@ -19,11 +19,11 @@ class _AuthEndpoint implements AuthEndpoint {
   String? baseUrl;
 
   @override
-  Future<bool> userLogin(UserAuthParams userAuthParams) async {
+  Future<bool> createProfile(UserApiModel userProfileParams) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = userAuthParams;
+    final _data = userProfileParams;
     final _result = await _dio.fetch<bool>(_setStreamType<bool>(Options(
       method: 'POST',
       headers: _headers,
@@ -31,7 +31,7 @@ class _AuthEndpoint implements AuthEndpoint {
     )
         .compose(
           _dio.options,
-          'api/login',
+          'api/createProfile',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -45,11 +45,37 @@ class _AuthEndpoint implements AuthEndpoint {
   }
 
   @override
-  Future<bool> userRegister(UserAuthParams userAuthParams) async {
+  Future<bool> getProfile() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = userAuthParams;
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<bool>(_setStreamType<bool>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'api/getProfile',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data!;
+    return value;
+  }
+
+  @override
+  Future<bool> updateProfile(UserApiModel userProfileParams) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = userProfileParams;
     final _result = await _dio.fetch<bool>(_setStreamType<bool>(Options(
       method: 'POST',
       headers: _headers,
@@ -57,7 +83,7 @@ class _AuthEndpoint implements AuthEndpoint {
     )
         .compose(
           _dio.options,
-          'api/register',
+          'api/updateProfile',
           queryParameters: queryParameters,
           data: _data,
         )

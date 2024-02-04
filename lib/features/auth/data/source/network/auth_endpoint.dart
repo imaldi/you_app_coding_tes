@@ -1,5 +1,6 @@
-import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
+import 'package:retrofit/retrofit.dart';
+import 'package:you_app_coding_tes/core/use_case/base_use_case.dart';
 
 part 'auth_endpoint.g.dart';
 
@@ -7,17 +8,9 @@ part 'auth_endpoint.g.dart';
 abstract class AuthEndpoint {
   factory AuthEndpoint(Dio dio, {String baseUrl}) = _AuthEndpoint;
 
-  @GET("/login")
-  Future<bool> userLogin(
-      @Query("username") String username,
-      @Query("email") String email,
-      @Query("password") String password,
-      );
+  @POST("api/login")
+  Future<bool> userLogin(@Body() UserAuthParams userAuthParams);
 
-  @GET("/register")
-  Future<bool> userRegister(
-      @Query("username") String username,
-      @Query("email") String email,
-      @Query("password") String password,
-      );
+  @POST("api/register")
+  Future<bool> userRegister(@Body() UserAuthParams userAuthParams);
 }

@@ -1,3 +1,4 @@
+import 'package:you_app_coding_tes/core/use_case/base_use_case.dart';
 import 'package:you_app_coding_tes/features/auth/data/source/network/auth_endpoint.dart';
 
 class AuthRemoteDataSourceImpl extends AuthRemoteDataSource  {
@@ -8,17 +9,14 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource  {
   @override
   Future<bool> userLogin(String username, String email, String password) async {
     return await _authEndpoint
-        .userLogin(username, email, password);
+        .userLogin(UserAuthParams(username: username, email: email, password: password));
   }
 
   @override
   Future<bool> userRegister(String username, String email, String password) async {
     return await _authEndpoint
-        .userRegister(username, email, password);
+        .userRegister(UserAuthParams(username: username, email: email, password: password));
   }
-
-
-
 }
 
 abstract class AuthRemoteDataSource {
