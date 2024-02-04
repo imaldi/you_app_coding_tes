@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_failures.dart';
+part of 'api_error.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ApiFailureImpl _$$ApiFailureImplFromJson(Map<String, dynamic> json) =>
-    _$ApiFailureImpl(
+_$ApiErrorImpl _$$ApiErrorImplFromJson(Map<String, dynamic> json) =>
+    _$ApiErrorImpl(
       statusCode: json['statusCode'] as int?,
       message: json['message'] as String?,
       errors: json['errors'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ApiFailureImplToJson(_$ApiFailureImpl instance) =>
+Map<String, dynamic> _$$ApiErrorImplToJson(_$ApiErrorImpl instance) =>
     <String, dynamic>{
       'statusCode': instance.statusCode,
       'message': instance.message,

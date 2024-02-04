@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'app_failures.dart';
+part of 'api_error.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,35 +14,34 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ApiFailure _$ApiFailureFromJson(Map<String, dynamic> json) {
-  return _ApiFailure.fromJson(json);
+ApiError _$ApiErrorFromJson(Map<String, dynamic> json) {
+  return _ApiError.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ApiFailure {
+mixin _$ApiError {
   int? get statusCode => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   Map<String, dynamic>? get errors => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApiFailureCopyWith<ApiFailure> get copyWith =>
+  $ApiErrorCopyWith<ApiError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApiFailureCopyWith<$Res> {
-  factory $ApiFailureCopyWith(
-          ApiFailure value, $Res Function(ApiFailure) then) =
-      _$ApiFailureCopyWithImpl<$Res, ApiFailure>;
+abstract class $ApiErrorCopyWith<$Res> {
+  factory $ApiErrorCopyWith(ApiError value, $Res Function(ApiError) then) =
+      _$ApiErrorCopyWithImpl<$Res, ApiError>;
   @useResult
   $Res call({int? statusCode, String? message, Map<String, dynamic>? errors});
 }
 
 /// @nodoc
-class _$ApiFailureCopyWithImpl<$Res, $Val extends ApiFailure>
-    implements $ApiFailureCopyWith<$Res> {
-  _$ApiFailureCopyWithImpl(this._value, this._then);
+class _$ApiErrorCopyWithImpl<$Res, $Val extends ApiError>
+    implements $ApiErrorCopyWith<$Res> {
+  _$ApiErrorCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -74,22 +73,22 @@ class _$ApiFailureCopyWithImpl<$Res, $Val extends ApiFailure>
 }
 
 /// @nodoc
-abstract class _$$ApiFailureImplCopyWith<$Res>
-    implements $ApiFailureCopyWith<$Res> {
-  factory _$$ApiFailureImplCopyWith(
-          _$ApiFailureImpl value, $Res Function(_$ApiFailureImpl) then) =
-      __$$ApiFailureImplCopyWithImpl<$Res>;
+abstract class _$$ApiErrorImplCopyWith<$Res>
+    implements $ApiErrorCopyWith<$Res> {
+  factory _$$ApiErrorImplCopyWith(
+          _$ApiErrorImpl value, $Res Function(_$ApiErrorImpl) then) =
+      __$$ApiErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? statusCode, String? message, Map<String, dynamic>? errors});
 }
 
 /// @nodoc
-class __$$ApiFailureImplCopyWithImpl<$Res>
-    extends _$ApiFailureCopyWithImpl<$Res, _$ApiFailureImpl>
-    implements _$$ApiFailureImplCopyWith<$Res> {
-  __$$ApiFailureImplCopyWithImpl(
-      _$ApiFailureImpl _value, $Res Function(_$ApiFailureImpl) _then)
+class __$$ApiErrorImplCopyWithImpl<$Res>
+    extends _$ApiErrorCopyWithImpl<$Res, _$ApiErrorImpl>
+    implements _$$ApiErrorImplCopyWith<$Res> {
+  __$$ApiErrorImplCopyWithImpl(
+      _$ApiErrorImpl _value, $Res Function(_$ApiErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +98,7 @@ class __$$ApiFailureImplCopyWithImpl<$Res>
     Object? message = freezed,
     Object? errors = freezed,
   }) {
-    return _then(_$ApiFailureImpl(
+    return _then(_$ApiErrorImpl(
       statusCode: freezed == statusCode
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -118,13 +117,13 @@ class __$$ApiFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ApiFailureImpl implements _ApiFailure {
-  const _$ApiFailureImpl(
+class _$ApiErrorImpl implements _ApiError {
+  const _$ApiErrorImpl(
       {this.statusCode, this.message, final Map<String, dynamic>? errors})
       : _errors = errors;
 
-  factory _$ApiFailureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ApiFailureImplFromJson(json);
+  factory _$ApiErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ApiErrorImplFromJson(json);
 
   @override
   final int? statusCode;
@@ -142,14 +141,14 @@ class _$ApiFailureImpl implements _ApiFailure {
 
   @override
   String toString() {
-    return 'ApiFailure(statusCode: $statusCode, message: $message, errors: $errors)';
+    return 'ApiError(statusCode: $statusCode, message: $message, errors: $errors)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ApiFailureImpl &&
+            other is _$ApiErrorImpl &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode) &&
             (identical(other.message, message) || other.message == message) &&
@@ -164,25 +163,25 @@ class _$ApiFailureImpl implements _ApiFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ApiFailureImplCopyWith<_$ApiFailureImpl> get copyWith =>
-      __$$ApiFailureImplCopyWithImpl<_$ApiFailureImpl>(this, _$identity);
+  _$$ApiErrorImplCopyWith<_$ApiErrorImpl> get copyWith =>
+      __$$ApiErrorImplCopyWithImpl<_$ApiErrorImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ApiFailureImplToJson(
+    return _$$ApiErrorImplToJson(
       this,
     );
   }
 }
 
-abstract class _ApiFailure implements ApiFailure, AppFailure {
-  const factory _ApiFailure(
+abstract class _ApiError implements ApiError {
+  const factory _ApiError(
       {final int? statusCode,
       final String? message,
-      final Map<String, dynamic>? errors}) = _$ApiFailureImpl;
+      final Map<String, dynamic>? errors}) = _$ApiErrorImpl;
 
-  factory _ApiFailure.fromJson(Map<String, dynamic> json) =
-      _$ApiFailureImpl.fromJson;
+  factory _ApiError.fromJson(Map<String, dynamic> json) =
+      _$ApiErrorImpl.fromJson;
 
   @override
   int? get statusCode;
@@ -192,6 +191,6 @@ abstract class _ApiFailure implements ApiFailure, AppFailure {
   Map<String, dynamic>? get errors;
   @override
   @JsonKey(ignore: true)
-  _$$ApiFailureImplCopyWith<_$ApiFailureImpl> get copyWith =>
+  _$$ApiErrorImplCopyWith<_$ApiErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -5,10 +5,10 @@ import 'package:you_app_coding_tes/core/failures/app_failures.dart';
 import '../../../../core/use_case/base_use_case.dart';
 import '../repository/auth_repository.dart';
 
-class UserLoginUseCase extends UseCase<bool, UserAuthParams> {
+class UserRegisterUseCase extends UseCase<bool, UserAuthParams> {
   final AuthRepository _repository;
 
-  UserLoginUseCase(this._repository);
+  UserRegisterUseCase(this._repository);
 
   @override
   Future<Either<AppFailure, bool>> call(UserAuthParams params) async {

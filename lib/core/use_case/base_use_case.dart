@@ -20,13 +20,13 @@ class NoParams with _$NoParams {
 }
 
 @freezed
-class UserLoginParams with _$UserLoginParams {
-  const factory UserLoginParams({
+class UserAuthParams with _$UserAuthParams {
+  const factory UserAuthParams({
     required String email,
     required String username,
     required String password,
-  }) = _UserLoginParams;
+  }) = _UserAuthParams;
 
-  factory UserLoginParams.fromJson(Map<String, Object?> json)
-=> _$UserLoginParamsFromJson(json);
+  factory UserAuthParams.fromJson(Map<String, Object?> json)
+=> _$UserAuthParamsFromJson(json);
 }
