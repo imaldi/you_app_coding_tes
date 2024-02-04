@@ -5,7 +5,7 @@ part 'api_error.freezed.dart';
 part 'api_error.g.dart';
 
 @freezed
-class ApiError extends AppFailure  with _$ApiError {
+class ApiError extends AppFailure with _$ApiError {
   // @Implements<AppFailure>()
   const factory ApiError({
     int? statusCode,

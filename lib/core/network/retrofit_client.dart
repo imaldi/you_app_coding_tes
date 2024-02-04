@@ -17,9 +17,9 @@ extension DioClientExtension on Dio {
     Dio dio = Dio(BaseOptions(
       baseUrl: AppConfig.urlYouApp,
       headers: headers,
-      connectTimeout: 10000,
-      receiveTimeout: 15000,
-      sendTimeout: 15000,
+      connectTimeout: const Duration(seconds: 10),
+      receiveTimeout: const Duration(seconds: 15),
+      sendTimeout: const Duration(seconds: 15),
     ));
     dio.interceptors.addAll([
       LogInterceptor(

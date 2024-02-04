@@ -6,12 +6,12 @@ import 'api_error.dart';
 
 class ErrorConverter extends InterceptorsWrapper {
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     /// FIXME change to more updated dio
-    if (err.type != DioErrorType.response) {
-      handler.next(err);
-      return;
-    }
+    // if (err.type != DioErrorType.response) {
+    //   handler.next(err);
+    //   return;
+    // }
     Map<String, dynamic> errorBody = {
       "statusCode": -1,
       "message": "Something went wrong",
@@ -38,6 +38,8 @@ class ErrorConverter extends InterceptorsWrapper {
     }
 
     var apiError = ApiError.fromJson(errorBody);
-    handler.next(err..error = apiError);
+
+
+    handler.next(err..copyWith(error: apiError, message: apiError.message,));
   }
 }
