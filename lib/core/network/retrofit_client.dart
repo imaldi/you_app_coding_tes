@@ -5,14 +5,16 @@ import '../configs/app_config.dart';
 import 'error_convertor.dart';
 
 extension DioClientExtension on Dio {
-  static Dio createUniversitiesApiClient({
+  static Dio getUserApiClient({
     contentType = "application/json",
     bool shouldRefreshToken = true,
     ApiAuthorization authorizationType = ApiAuthorization.none,
+    String? accessToken,
   }) {
     Map<String, String> headers = {
       "Content-Type": contentType,
       "Accept": "application/json",
+      "x-access-token": "$accessToken",
     };
     Dio dio = Dio(BaseOptions(
       baseUrl: AppConfig.urlYouApp,

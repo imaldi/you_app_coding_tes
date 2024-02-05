@@ -1,4 +1,5 @@
 import 'package:you_app_coding_tes/features/profile/data/source/network/endpoint/profile_endpoint.dart';
+import 'package:you_app_coding_tes/features/profile/data/source/network/model/profile_response.dart';
 import 'package:you_app_coding_tes/features/profile/data/source/network/model/user_model.dart';
 
 class ProfileRemoteDataSourceImpl extends ProfileRemoteDataSource {
@@ -17,7 +18,7 @@ class ProfileRemoteDataSourceImpl extends ProfileRemoteDataSource {
   }
 
   @override
-  Future<bool> getProfile() async {
+  Future<ProfileResponse> getProfile() async {
     return await _profileEndpoint.getProfile();
   }
 }
@@ -25,7 +26,7 @@ class ProfileRemoteDataSourceImpl extends ProfileRemoteDataSource {
 abstract class ProfileRemoteDataSource {
   Future<bool> createProfile(UserApiModel userParam);
 
-  Future<bool> getProfile();
+  Future<ProfileResponse> getProfile();
 
   Future<bool> updateProfile(UserApiModel userParam);
 }

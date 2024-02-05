@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:you_app_coding_tes/core/use_case/base_use_case.dart';
 
+import '../model/profile_response.dart';
 import '../model/user_model.dart';
 
 part 'profile_endpoint.g.dart';
@@ -15,8 +16,8 @@ abstract class ProfileEndpoint {
 
 
   @GET("api/getProfile")
-  Future<bool> getProfile();
+  Future<ProfileResponse> getProfile();
 
-  @POST("api/updateProfile")
+  @PUT("api/updateProfile")
   Future<bool> updateProfile(@Body() UserApiModel userProfileParams);
 }
