@@ -23,7 +23,7 @@ mixin _$ProfileResponse {
   @JsonKey(name: "message")
   String? get message => throw _privateConstructorUsedError;
   @JsonKey(name: "data")
-  AuthModel? get data => throw _privateConstructorUsedError;
+  UserApiModel? get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,9 +39,9 @@ abstract class $ProfileResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "message") String? message,
-      @JsonKey(name: "data") AuthModel? data});
+      @JsonKey(name: "data") UserApiModel? data});
 
-  $AuthModelCopyWith<$Res>? get data;
+  $UserApiModelCopyWith<$Res>? get data;
 }
 
 /// @nodoc
@@ -68,18 +68,18 @@ class _$ProfileResponseCopyWithImpl<$Res, $Val extends ProfileResponse>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as AuthModel?,
+              as UserApiModel?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AuthModelCopyWith<$Res>? get data {
+  $UserApiModelCopyWith<$Res>? get data {
     if (_value.data == null) {
       return null;
     }
 
-    return $AuthModelCopyWith<$Res>(_value.data!, (value) {
+    return $UserApiModelCopyWith<$Res>(_value.data!, (value) {
       return _then(_value.copyWith(data: value) as $Val);
     });
   }
@@ -95,10 +95,10 @@ abstract class _$$ProfileResponseImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "message") String? message,
-      @JsonKey(name: "data") AuthModel? data});
+      @JsonKey(name: "data") UserApiModel? data});
 
   @override
-  $AuthModelCopyWith<$Res>? get data;
+  $UserApiModelCopyWith<$Res>? get data;
 }
 
 /// @nodoc
@@ -123,7 +123,7 @@ class __$$ProfileResponseImplCopyWithImpl<$Res>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as AuthModel?,
+              as UserApiModel?,
     ));
   }
 }
@@ -143,7 +143,7 @@ class _$ProfileResponseImpl implements _ProfileResponse {
   final String? message;
   @override
   @JsonKey(name: "data")
-  final AuthModel? data;
+  final UserApiModel? data;
 
   @override
   String toString() {
@@ -181,7 +181,7 @@ class _$ProfileResponseImpl implements _ProfileResponse {
 abstract class _ProfileResponse implements ProfileResponse {
   const factory _ProfileResponse(
       {@JsonKey(name: "message") final String? message,
-      @JsonKey(name: "data") final AuthModel? data}) = _$ProfileResponseImpl;
+      @JsonKey(name: "data") final UserApiModel? data}) = _$ProfileResponseImpl;
 
   factory _ProfileResponse.fromJson(Map<String, dynamic> json) =
       _$ProfileResponseImpl.fromJson;
@@ -191,7 +191,7 @@ abstract class _ProfileResponse implements ProfileResponse {
   String? get message;
   @override
   @JsonKey(name: "data")
-  AuthModel? get data;
+  UserApiModel? get data;
   @override
   @JsonKey(ignore: true)
   _$$ProfileResponseImplCopyWith<_$ProfileResponseImpl> get copyWith =>

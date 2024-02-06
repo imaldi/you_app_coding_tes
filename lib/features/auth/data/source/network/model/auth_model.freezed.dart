@@ -24,8 +24,8 @@ mixin _$AuthModel {
   String? get email => throw _privateConstructorUsedError;
   @JsonKey(name: "username")
   String? get username => throw _privateConstructorUsedError;
-  @JsonKey(name: "interests")
-  List<String>? get interests => throw _privateConstructorUsedError;
+  @JsonKey(name: "password")
+  String? get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +41,7 @@ abstract class $AuthModelCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "email") String? email,
       @JsonKey(name: "username") String? username,
-      @JsonKey(name: "interests") List<String>? interests});
+      @JsonKey(name: "password") String? password});
 }
 
 /// @nodoc
@@ -59,7 +59,7 @@ class _$AuthModelCopyWithImpl<$Res, $Val extends AuthModel>
   $Res call({
     Object? email = freezed,
     Object? username = freezed,
-    Object? interests = freezed,
+    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
       email: freezed == email
@@ -70,10 +70,10 @@ class _$AuthModelCopyWithImpl<$Res, $Val extends AuthModel>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
-      interests: freezed == interests
-          ? _value.interests
-          : interests // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -89,7 +89,7 @@ abstract class _$$AuthModelImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: "email") String? email,
       @JsonKey(name: "username") String? username,
-      @JsonKey(name: "interests") List<String>? interests});
+      @JsonKey(name: "password") String? password});
 }
 
 /// @nodoc
@@ -105,7 +105,7 @@ class __$$AuthModelImplCopyWithImpl<$Res>
   $Res call({
     Object? email = freezed,
     Object? username = freezed,
-    Object? interests = freezed,
+    Object? password = freezed,
   }) {
     return _then(_$AuthModelImpl(
       email: freezed == email
@@ -116,10 +116,10 @@ class __$$AuthModelImplCopyWithImpl<$Res>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
-      interests: freezed == interests
-          ? _value._interests
-          : interests // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -130,8 +130,7 @@ class _$AuthModelImpl implements _AuthModel {
   const _$AuthModelImpl(
       {@JsonKey(name: "email") this.email,
       @JsonKey(name: "username") this.username,
-      @JsonKey(name: "interests") final List<String>? interests})
-      : _interests = interests;
+      @JsonKey(name: "password") this.password});
 
   factory _$AuthModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AuthModelImplFromJson(json);
@@ -142,20 +141,13 @@ class _$AuthModelImpl implements _AuthModel {
   @override
   @JsonKey(name: "username")
   final String? username;
-  final List<String>? _interests;
   @override
-  @JsonKey(name: "interests")
-  List<String>? get interests {
-    final value = _interests;
-    if (value == null) return null;
-    if (_interests is EqualUnmodifiableListView) return _interests;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  @JsonKey(name: "password")
+  final String? password;
 
   @override
   String toString() {
-    return 'AuthModel(email: $email, username: $username, interests: $interests)';
+    return 'AuthModel(email: $email, username: $username, password: $password)';
   }
 
   @override
@@ -166,14 +158,13 @@ class _$AuthModelImpl implements _AuthModel {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.username, username) ||
                 other.username == username) &&
-            const DeepCollectionEquality()
-                .equals(other._interests, _interests));
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, email, username,
-      const DeepCollectionEquality().hash(_interests));
+  int get hashCode => Object.hash(runtimeType, email, username, password);
 
   @JsonKey(ignore: true)
   @override
@@ -191,10 +182,9 @@ class _$AuthModelImpl implements _AuthModel {
 
 abstract class _AuthModel implements AuthModel {
   const factory _AuthModel(
-          {@JsonKey(name: "email") final String? email,
-          @JsonKey(name: "username") final String? username,
-          @JsonKey(name: "interests") final List<String>? interests}) =
-      _$AuthModelImpl;
+      {@JsonKey(name: "email") final String? email,
+      @JsonKey(name: "username") final String? username,
+      @JsonKey(name: "password") final String? password}) = _$AuthModelImpl;
 
   factory _AuthModel.fromJson(Map<String, dynamic> json) =
       _$AuthModelImpl.fromJson;
@@ -206,8 +196,8 @@ abstract class _AuthModel implements AuthModel {
   @JsonKey(name: "username")
   String? get username;
   @override
-  @JsonKey(name: "interests")
-  List<String>? get interests;
+  @JsonKey(name: "password")
+  String? get password;
   @override
   @JsonKey(ignore: true)
   _$$AuthModelImplCopyWith<_$AuthModelImpl> get copyWith =>

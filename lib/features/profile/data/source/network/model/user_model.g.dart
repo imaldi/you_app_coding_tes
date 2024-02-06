@@ -8,6 +8,9 @@ part of 'user_model.dart';
 
 _$UserApiModelImpl _$$UserApiModelImplFromJson(Map<String, dynamic> json) =>
     _$UserApiModelImpl(
+      email: json['email'] as String?,
+      username: json['username'] as String?,
+      password: json['password'] as String?,
       name: json['name'] as String?,
       birthday: json['birthday'] as String?,
       height: json['height'] as String?,
@@ -19,6 +22,9 @@ _$UserApiModelImpl _$$UserApiModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$UserApiModelImplToJson(_$UserApiModelImpl instance) =>
     <String, dynamic>{
+      'email': instance.email,
+      'username': instance.username,
+      'password': instance.password,
       'name': instance.name,
       'birthday': instance.birthday,
       'height': instance.height,

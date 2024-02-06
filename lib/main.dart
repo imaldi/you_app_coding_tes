@@ -1,8 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:you_app_coding_tes/features/auth/presentation/register_screen.dart';
+import 'package:you_app_coding_tes/features/profile/presentation/profile_screen.dart';
+
+import 'features/auth/presentation/login_screen.dart';
+import 'features/profile/presentation/update_profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+final GoRouter _router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return const LoginScreen();
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: 'register',
+          builder: (BuildContext context, GoRouterState state) {
+            return const RegisterScreen();
+          },
+        ),
+        GoRoute(
+          path: 'profile',
+          builder: (BuildContext context, GoRouterState state) {
+            return const ProfileScreen();
+          },
+        ),
+        GoRoute(
+          path: 'updateProfile',
+          builder: (BuildContext context, GoRouterState state) {
+            return const UpdateProfileScreen();
+          },
+          routes: <RouteBase>[
+            GoRoute(
+              path: 'updateInterest',
+              builder: (BuildContext context, GoRouterState state) {
+                return const ProfileScreen();
+              },
+            ),
+          ]
+        ),
+      ],
+    ),
+  ],
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,15 +58,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),

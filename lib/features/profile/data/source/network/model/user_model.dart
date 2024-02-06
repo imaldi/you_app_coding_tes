@@ -11,6 +11,12 @@ class UserApiModel with _$UserApiModel {
   /// have to add this default empty constructor
   const UserApiModel._();
   const factory UserApiModel({
+    @JsonKey(name: "email")
+    String? email,
+    @JsonKey(name: "username")
+    String? username,
+    @JsonKey(name: "password")
+    String? password,
     @JsonKey(name: "name")
     String? name,
     @JsonKey(name: "birthday")

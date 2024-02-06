@@ -20,6 +20,12 @@ UserApiModel _$UserApiModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserApiModel {
+  @JsonKey(name: "email")
+  String? get email => throw _privateConstructorUsedError;
+  @JsonKey(name: "username")
+  String? get username => throw _privateConstructorUsedError;
+  @JsonKey(name: "password")
+  String? get password => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: "birthday")
@@ -44,7 +50,10 @@ abstract class $UserApiModelCopyWith<$Res> {
       _$UserApiModelCopyWithImpl<$Res, UserApiModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: "name") String? name,
+      {@JsonKey(name: "email") String? email,
+      @JsonKey(name: "username") String? username,
+      @JsonKey(name: "password") String? password,
+      @JsonKey(name: "name") String? name,
       @JsonKey(name: "birthday") String? birthday,
       @JsonKey(name: "height") String? height,
       @JsonKey(name: "weight") String? weight,
@@ -64,6 +73,9 @@ class _$UserApiModelCopyWithImpl<$Res, $Val extends UserApiModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? email = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
     Object? name = freezed,
     Object? birthday = freezed,
     Object? height = freezed,
@@ -71,6 +83,18 @@ class _$UserApiModelCopyWithImpl<$Res, $Val extends UserApiModel>
     Object? interests = freezed,
   }) {
     return _then(_value.copyWith(
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -104,7 +128,10 @@ abstract class _$$UserApiModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "name") String? name,
+      {@JsonKey(name: "email") String? email,
+      @JsonKey(name: "username") String? username,
+      @JsonKey(name: "password") String? password,
+      @JsonKey(name: "name") String? name,
       @JsonKey(name: "birthday") String? birthday,
       @JsonKey(name: "height") String? height,
       @JsonKey(name: "weight") String? weight,
@@ -122,6 +149,9 @@ class __$$UserApiModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? email = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
     Object? name = freezed,
     Object? birthday = freezed,
     Object? height = freezed,
@@ -129,6 +159,18 @@ class __$$UserApiModelImplCopyWithImpl<$Res>
     Object? interests = freezed,
   }) {
     return _then(_$UserApiModelImpl(
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -157,7 +199,10 @@ class __$$UserApiModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserApiModelImpl extends _UserApiModel {
   const _$UserApiModelImpl(
-      {@JsonKey(name: "name") this.name,
+      {@JsonKey(name: "email") this.email,
+      @JsonKey(name: "username") this.username,
+      @JsonKey(name: "password") this.password,
+      @JsonKey(name: "name") this.name,
       @JsonKey(name: "birthday") this.birthday,
       @JsonKey(name: "height") this.height,
       @JsonKey(name: "weight") this.weight,
@@ -168,6 +213,15 @@ class _$UserApiModelImpl extends _UserApiModel {
   factory _$UserApiModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserApiModelImplFromJson(json);
 
+  @override
+  @JsonKey(name: "email")
+  final String? email;
+  @override
+  @JsonKey(name: "username")
+  final String? username;
+  @override
+  @JsonKey(name: "password")
+  final String? password;
   @override
   @JsonKey(name: "name")
   final String? name;
@@ -193,7 +247,7 @@ class _$UserApiModelImpl extends _UserApiModel {
 
   @override
   String toString() {
-    return 'UserApiModel(name: $name, birthday: $birthday, height: $height, weight: $weight, interests: $interests)';
+    return 'UserApiModel(email: $email, username: $username, password: $password, name: $name, birthday: $birthday, height: $height, weight: $weight, interests: $interests)';
   }
 
   @override
@@ -201,6 +255,11 @@ class _$UserApiModelImpl extends _UserApiModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserApiModelImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.birthday, birthday) ||
                 other.birthday == birthday) &&
@@ -212,7 +271,15 @@ class _$UserApiModelImpl extends _UserApiModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, birthday, height, weight,
+  int get hashCode => Object.hash(
+      runtimeType,
+      email,
+      username,
+      password,
+      name,
+      birthday,
+      height,
+      weight,
       const DeepCollectionEquality().hash(_interests));
 
   @JsonKey(ignore: true)
@@ -231,7 +298,10 @@ class _$UserApiModelImpl extends _UserApiModel {
 
 abstract class _UserApiModel extends UserApiModel {
   const factory _UserApiModel(
-          {@JsonKey(name: "name") final String? name,
+          {@JsonKey(name: "email") final String? email,
+          @JsonKey(name: "username") final String? username,
+          @JsonKey(name: "password") final String? password,
+          @JsonKey(name: "name") final String? name,
           @JsonKey(name: "birthday") final String? birthday,
           @JsonKey(name: "height") final String? height,
           @JsonKey(name: "weight") final String? weight,
@@ -242,6 +312,15 @@ abstract class _UserApiModel extends UserApiModel {
   factory _UserApiModel.fromJson(Map<String, dynamic> json) =
       _$UserApiModelImpl.fromJson;
 
+  @override
+  @JsonKey(name: "email")
+  String? get email;
+  @override
+  @JsonKey(name: "username")
+  String? get username;
+  @override
+  @JsonKey(name: "password")
+  String? get password;
   @override
   @JsonKey(name: "name")
   String? get name;

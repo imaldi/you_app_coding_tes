@@ -11,8 +11,8 @@ class AuthModel with _$AuthModel {
     String? email,
     @JsonKey(name: "username")
     String? username,
-    @JsonKey(name: "interests")
-    List<String>? interests,
+    @JsonKey(name: "password")
+    String? password,
   }) = _AuthModel;
 
   factory AuthModel.fromJson(Map<String, dynamic> json) => _$AuthModelFromJson(json);

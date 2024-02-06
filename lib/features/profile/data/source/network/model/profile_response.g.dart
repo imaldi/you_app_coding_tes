@@ -12,7 +12,7 @@ _$ProfileResponseImpl _$$ProfileResponseImplFromJson(
       message: json['message'] as String?,
       data: json['data'] == null
           ? null
-          : AuthModel.fromJson(json['data'] as Map<String, dynamic>),
+          : UserApiModel.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$ProfileResponseImplToJson(

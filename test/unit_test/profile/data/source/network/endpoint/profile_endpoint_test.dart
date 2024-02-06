@@ -84,7 +84,7 @@ void main() {
       var result = await endpoint.getProfile();
       expect(result, const ProfileResponse(
         message: "Profile has been found successfully",
-        data: AuthModel(
+        data: UserApiModel(
           email: "aldiirsanmajid@gmail.com",
           username: "aldi_irsan_majid",
           interests: ["Read","Write"]

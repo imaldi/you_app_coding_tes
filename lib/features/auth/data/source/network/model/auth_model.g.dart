@@ -10,14 +10,12 @@ _$AuthModelImpl _$$AuthModelImplFromJson(Map<String, dynamic> json) =>
     _$AuthModelImpl(
       email: json['email'] as String?,
       username: json['username'] as String?,
-      interests: (json['interests'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      password: json['password'] as String?,
     );
 
 Map<String, dynamic> _$$AuthModelImplToJson(_$AuthModelImpl instance) =>
     <String, dynamic>{
       'email': instance.email,
       'username': instance.username,
-      'interests': instance.interests,
+      'password': instance.password,
     };
