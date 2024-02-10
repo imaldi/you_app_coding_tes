@@ -26,33 +26,33 @@ void main() {
     ));
   }
 
-  Map<String, dynamic> generateValidUsers() => 
+  Map<String, dynamic> generateValidUsers() =>
       // [
-    {
-      "name": "Aldi",
-      "birthday": "October 2nd 1998",
-      "height": "157",
-      "weight": "49",
-      "interests": ["Programming", "Math"]
-    };
-    // {
-    //   "name": "Aldi2",
-    //   "birthday": "October 3rd 1999",
-    //   "height": "160",
-    //   "weight": "47",
-    //   "interests": ["Gaming", "Science"]
-    // },
+      {
+        "name": "Aldi",
+        "birthday": "October 2nd 1998",
+        "height": "157",
+        "weight": "49",
+        "interests": ["Programming", "Math"]
+      };
+  // {
+  //   "name": "Aldi2",
+  //   "birthday": "October 3rd 1999",
+  //   "height": "160",
+  //   "weight": "47",
+  //   "interests": ["Gaming", "Science"]
+  // },
   // ];
 
-  UserApiModel expectedValidUser() => const 
-  // [
-    UserApiModel(
-      name: "Aldi",
-      birthday: "October 2nd 1998",
-      height: "157",
-      weight: "49",
-      interests: ["Programming", "Math"],
-    );
+  UserApiModel expectedValidUser() => const
+      // [
+      UserApiModel(
+        name: "Aldi",
+        birthday: "October 2nd 1998",
+        height: "157",
+        weight: "49",
+        interests: ["Programming", "Math"],
+      );
   //   UserApiModel(
   //     name: "Aldi2",
   //     birthday: "October 3rd 1999",
@@ -77,28 +77,25 @@ void main() {
           "data": {
             "email": "aldiirsanmajid@gmail.com",
             "username": "aldi_irsan_majid",
-            "interests": ["Read","Write"]
+            "interests": ["Read", "Write"]
           }
         },
       );
       var result = await endpoint.getProfile();
-      expect(result, const ProfileResponse(
-        message: "Profile has been found successfully",
-        data: UserApiModel(
-          email: "aldiirsanmajid@gmail.com",
-          username: "aldi_irsan_majid",
-          interests: ["Read","Write"]
-        )
-      ));
+      expect(
+          result,
+          const ProfileResponse(
+              message: "Profile has been found successfully",
+              data: UserApiModel(
+                  email: "aldiirsanmajid@gmail.com",
+                  username: "aldi_irsan_majid",
+                  interests: ["Read", "Write"])));
     });
 
     test('Test endpoint returns error', () async {
       dioClient.httpClientAdapter = _createMockAdapterForGetProfileRequest(
         500,
-        {
-          "statusCode": 500,
-          "message": "Internal server error"
-        },
+        {"statusCode": 500, "message": "Internal server error"},
       );
       ProfileResponse? profileResponse;
       DioException? exception;

@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'auth_entity.freezed.dart';
@@ -9,5 +8,5 @@ class AuthEntity with _$AuthEntity {
     required String email,
     required String username,
     required String password,
-}) = _AuthEntity;
+  }) = _AuthEntity;
 }

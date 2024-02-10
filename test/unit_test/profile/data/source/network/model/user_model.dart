@@ -53,22 +53,20 @@ void main() {
 
   group("Test ApiUserModel initialization from JSON", () {
     test('Test using json one', () {
-      expect(UserApiModel.fromJson(apiUserOneAsJson),
-          expectedApiUserOne);
+      expect(UserApiModel.fromJson(apiUserOneAsJson), expectedApiUserOne);
     });
     test('Test using json two', () {
-      expect(UserApiModel.fromJson(apiUserTwoAsJson),
-          expectedApiUserTwo);
+      expect(UserApiModel.fromJson(apiUserTwoAsJson), expectedApiUserTwo);
     });
   });
   group("Test ApiUserModel toDomain", () {
     test('Test toDomain using json one', () {
-      expect(UserApiModel.fromJson(apiUserOneAsJson).toDomain(),
-          expectedUserOne);
+      expect(
+          UserApiModel.fromJson(apiUserOneAsJson).toDomain(), expectedUserOne);
     });
     test('Test toDomain using json two', () {
-      expect(UserApiModel.fromJson(apiUserTwoAsJson).toDomain(),
-          expectedUserTwo);
+      expect(
+          UserApiModel.fromJson(apiUserTwoAsJson).toDomain(), expectedUserTwo);
     });
   });
 }

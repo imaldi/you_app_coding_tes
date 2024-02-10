@@ -30,9 +30,6 @@ const dummyUpdateProfile = {
     "zodiac": "Tiger",
     "height": 156,
     "weight": 48,
-    "interests": [
-      "Programming",
-      "Math"
-    ]
+    "interests": ["Programming", "Math"]
   }
 };

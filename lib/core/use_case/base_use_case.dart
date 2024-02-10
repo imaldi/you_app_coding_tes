@@ -27,6 +27,6 @@ class UserAuthParams with _$UserAuthParams {
     required String password,
   }) = _UserAuthParams;
 
-  factory UserAuthParams.fromJson(Map<String, Object?> json)
-=> _$UserAuthParamsFromJson(json);
+  factory UserAuthParams.fromJson(Map<String, Object?> json) =>
+      _$UserAuthParamsFromJson(json);
 }

@@ -12,7 +12,7 @@ class UserRegisterUseCase extends UseCase<bool, UserAuthParams> {
 
   @override
   Future<Either<AppFailure, bool>> call(UserAuthParams params) async {
-    return await _repository.userLogin(params.username, params.email, params.password);
+    return await _repository.userLogin(
+        params.username, params.email, params.password);
   }
-
 }

@@ -13,6 +13,6 @@ class ApiError extends AppFailure with _$ApiError {
     Map<String, dynamic>? errors,
   }) = _ApiError;
 
-  factory ApiError.fromJson(Map<String, Object?> json)
-  => _$ApiErrorFromJson(json);
+  factory ApiError.fromJson(Map<String, Object?> json) =>
+      _$ApiErrorFromJson(json);
 }

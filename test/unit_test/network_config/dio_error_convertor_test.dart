@@ -50,8 +50,10 @@ void main() {
         await dioClient.fetch(getRequestOptions());
       } on DioException catch (dioException, _) {
         expect(dioException.error.runtimeType, ApiError);
-        apiError = ApiError(statusCode: dioException.response?.statusCode,
-          message: dioException.response?.statusMessage,);
+        apiError = ApiError(
+          statusCode: dioException.response?.statusCode,
+          message: dioException.response?.statusMessage,
+        );
       }
       expect(apiError, const ApiError(statusCode: 404, message: "Not found!"));
     });
@@ -66,11 +68,13 @@ void main() {
         await dioClient.fetch(getRequestOptions());
       } on DioException catch (dioException, _) {
         expect(dioException.error.runtimeType, ApiError);
-        apiError = ApiError(statusCode: dioException.response?.statusCode,
-            message: dioException.response?.statusMessage,);
+        apiError = ApiError(
+          statusCode: dioException.response?.statusCode,
+          message: dioException.response?.statusMessage,
+        );
       }
-      expect(
-          apiError, const ApiError(statusCode: 404, message: "Something went wrong"));
+      expect(apiError,
+          const ApiError(statusCode: 404, message: "Something went wrong"));
     });
 
     test('Test endpoint returns 400 error with List of errors', () async {
@@ -88,12 +92,16 @@ void main() {
       try {
         await dioClient.fetch(getRequestOptions());
       }
+
       /// Changed from DioError catch (dioError,_)
       on DioException catch (dioException, _) {
         expect(dioException.error.runtimeType, ApiError);
+
         /// changed from apiError = dioError.error;
-        apiError = ApiError(statusCode: dioException.response?.statusCode,
-        message: dioException.response?.statusMessage,);
+        apiError = ApiError(
+          statusCode: dioException.response?.statusCode,
+          message: dioException.response?.statusMessage,
+        );
       }
       expect(
           apiError,

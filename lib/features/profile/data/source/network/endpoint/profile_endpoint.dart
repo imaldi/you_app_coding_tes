@@ -14,7 +14,6 @@ abstract class ProfileEndpoint {
   @POST("api/createProfile")
   Future<bool> createProfile(@Body() UserApiModel userProfileParams);
 
-
   @GET("api/getProfile")
   Future<ProfileResponse> getProfile();
 

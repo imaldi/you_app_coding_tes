@@ -12,7 +12,8 @@ class AuthRepositoryImpl extends AuthRepository {
   AuthRepositoryImpl(this._remoteDataSource);
 
   @override
-  Future<Either<AppFailure, bool>> userLogin(String username, String email, String password) async {
+  Future<Either<AppFailure, bool>> userLogin(
+      String username, String email, String password) async {
     try {
       await _remoteDataSource.userLogin(username, email, password);
       return const Right(true);
@@ -23,7 +24,8 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<Either<AppFailure, bool>> userRegister(String username, String email, String password) async {
+  Future<Either<AppFailure, bool>> userRegister(
+      String username, String email, String password) async {
     try {
       await _remoteDataSource.userRegister(username, email, password);
       return const Right(true);
@@ -32,5 +34,4 @@ class AuthRepositoryImpl extends AuthRepository {
       return const Left(ApiError());
     }
   }
-
 }

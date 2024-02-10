@@ -39,7 +39,10 @@ class ErrorConverter extends InterceptorsWrapper {
 
     var apiError = ApiError.fromJson(errorBody);
 
-
-    handler.next(err..copyWith(error: apiError, message: apiError.message,));
+    handler.next(err
+      ..copyWith(
+        error: apiError,
+        message: apiError.message,
+      ));
   }
 }
